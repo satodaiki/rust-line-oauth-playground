@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block header %}
+<script>
+    document.getElementById("line_login").addEventListener()
+</script>
+{% endblock header %}
+{% block content %}
+<form action="https://access.line.me/oauth2/v2.1/authorize" method="get">
+    <input type="hidden" name="response_type" value="code">
+    <input type="hidden" name="client_id" value="{{ client_id }}">
+    <input type="hidden" name="redirect_uri" value="{{ redirect_uri }}">
+    <input type="hidden" name="state" value="{{ state }}">
+    <input type="hidden" name="scope" value="{{ scope }}">
+    <input type="hidden" name="nonce" value="{{ nonce }}">
+    <button type="submit" id="line_login">
+        <img src="/public/img/btn_login_base.png" alt="loginボタン">
+    </button>
+</form>
+{% endblock content %}
